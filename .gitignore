@@ -8,3 +8,4 @@ playwright-report/
 coverage/
 bench/tmp/
 *.tsbuildinfo
+apps/web/public/downloads/

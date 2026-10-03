@@ -156,6 +156,8 @@ async function cmdEncode(a: Args): Promise<void> {
     try {
       const loaded = await readImageFile(input, { frame: num(f, 'frame', 0, 1e6), width: num(f, 'width', 1, 65535), height: num(f, 'height', 1, 65535) });
       const frames = f.frames === 'all' && loaded.frames ? loaded.frames : [loaded.image];
+      if (frames.length > 1) loaded.notes = loaded.notes.filter((n) => !n.startsWith('GIF has'));
+      let framesTotal = 0;
       for (let fi = 0; fi < frames.length; fi++) {
         let img = frames[fi];
         if (f.resize) {
@@ -179,19 +181,22 @@ async function cmdEncode(a: Args): Promise<void> {
         if (fs.existsSync(out) && !f.force) throw new Error(`${out} already exists (use --force to overwrite)`);
         writeOut(out, r.bytes, true);
         const srcBytes = fs.statSync(input).size;
+        framesTotal += r.bytes.length;
         const stats = compressionStats(srcBytes, r.bytes.length, img.width * img.height);
         if (f.json) {
           results.push({ input, output: out, ...r.info, sourceBytes: srcBytes, stats, duplicateOf: dup ?? null, notes: loaded.notes });
         } else {
           console.log(`${input}${frames.length > 1 ? ` [frame ${fi}]` : ''} → ${out}`);
           console.log(`  ${img.width}×${img.height} · ${r.info.codecName} · ${r.info.colorModelName}${r.info.quality !== null ? ` · quality ${r.info.quality}` : ''} · ${r.info.exact ? 'lossless (bit-exact)' : r.info.visuallyLossless ? 'visually lossless' : 'lossy'}`);
-          console.log(`  ${describeStats(stats)} (${stats.bitsPerPixel!.toFixed(2)} bpp, ${ms.toFixed(0)} ms)`);
+          if (frames.length > 1) console.log(`  SMG: ${formatBytes(r.bytes.length)} (${stats.bitsPerPixel!.toFixed(2)} bpp, ${ms.toFixed(0)} ms)`);
+          else console.log(`  ${describeStats(stats)} (${stats.bitsPerPixel!.toFixed(2)} bpp, ${ms.toFixed(0)} ms)`);
           if (r.info.candidates.length > 1) console.log(`  candidates: ${r.info.candidates.map((c) => `${c.label} ${formatBytes(c.bytes)}${c.chosen ? ' ✓' : ''}`).join(' · ')}`);
           if (r.info.targetSize !== null) console.log(`  target ${formatBytes(r.info.targetSize)}: ${r.info.targetMet ? 'met' : 'NOT met — smallest achievable output written'}`);
           if (dup) console.log(`  note: identical pixels to ${dup} — encoded once and reused`);
-          for (const n of loaded.notes) console.log(`  note: ${n}`);
+          if (fi === frames.length - 1) for (const n of loaded.notes) console.log(`  note: ${n}`);
         }
       }
+      if (frames.length > 1 && !f.json) console.log(`  all ${frames.length} frames: ${describeStats(compressionStats(fs.statSync(input).size, framesTotal), 'SMG frames')}`);
     } catch (e) {
       failures++;
       if (e instanceof UsageError) throw e;

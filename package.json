@@ -14,8 +14,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "npm run build -w @smg/codec && npm run build -w @smg/cli && npm run build -w @smg/web",
-    "build:web": "npm run build -w @smg/codec && npm run build -w @smg/cli && npm run build -w @smg/web",
+    "build": "npm run build -w @smg/codec && npm run build -w @smg/cli && node scripts/prepare-downloads.mjs && npm run build -w @smg/web",
+    "build:web": "npm run build -w @smg/codec && npm run build -w @smg/cli && node scripts/prepare-downloads.mjs && npm run build -w @smg/web",
     "dev": "npm run dev -w @smg/web",
     "test": "vitest run",
     "test:watch": "vitest",
