@@ -10,11 +10,15 @@
     ".": "./src/index.ts",
     "./io": "./src/io/index.ts"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "node build.mjs"
   },
   "dependencies": {
     "fflate": "^0.8.2"
-  }
+  },
+  "sideEffects": false
 }

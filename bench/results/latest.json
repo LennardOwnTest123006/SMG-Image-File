@@ -1,0 +1,1192 @@
+{
+  "tool": "smg benchmark (SMG 1.0.0)",
+  "generatedAt": "2026-10-03T12:49:42.454Z",
+  "machine": {
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+    "cores": 4,
+    "memoryGB": 17,
+    "os": "Linux 6.18.44-fc-v64 (x64)",
+    "node": "v22.22.0"
+  },
+  "versions": {
+    "smg": "1.0.0",
+    "aom": "3.15.1",
+    "archive": "3.8.9",
+    "cairo": "1.18.6",
+    "cgif": "0.5.4",
+    "exif": "0.6.26",
+    "expat": "2.8.5",
+    "ffi": "3.8.0",
+    "fontconfig": "2.18.3",
+    "freetype": "2.14.3",
+    "fribidi": "1.0.17",
+    "glib": "2.90.0",
+    "harfbuzz": "14.5.0",
+    "heif": "1.23.5",
+    "highway": "1.4.0",
+    "imagequant": "2.4.1",
+    "lcms": "2.19.1",
+    "mozjpeg": "0826579",
+    "pango": "1.58.2",
+    "pixman": "0.46.4",
+    "png": "1.6.58",
+    "proxy-libintl": "0.5",
+    "rsvg": "2.63.2",
+    "tiff": "4.7.2",
+    "uhdr": "2.0.2",
+    "vips": "8.18.7",
+    "webp": "1.6.0",
+    "xml2": "2.15.4",
+    "zlib-ng": "2.3.3",
+    "sharp": "0.35.5"
+  },
+  "settings": {
+    "smgLossless": "mode 'lossless', effort 7",
+    "smgLossy": "mode 'auto', quality 80, effort 5",
+    "png": "libpng via sharp: compressionLevel 9, adaptiveFiltering",
+    "webpLossless": "libwebp via sharp: lossless, effort 6, exact",
+    "avifLossless": "libheif/aom via sharp: lossless, effort 4",
+    "jpeg": "mozjpeg via sharp, quality searched 1–100",
+    "webpLossy": "libwebp via sharp, effort 6, quality searched 1–100",
+    "avifLossy": "libheif/aom via sharp, effort 4, quality searched 1–100",
+    "ssim": "luma SSIM, Gaussian σ=1.5, alpha-premultiplied; lossy target = min(SMG SSIM, 0.995)",
+    "threads": "sharp.concurrency(1); SMG is single-threaded JavaScript"
+  },
+  "images": [
+    {
+      "file": "photo-astronaut.png",
+      "category": "photo",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": false,
+      "sourceBytes": 636225,
+      "lossless": {
+        "smg": {
+          "bytes": 329230,
+          "encodeMs": 1087.417532,
+          "decodeMs": 331.36037799999986,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 487305,
+          "encodeMs": 145.90937699999995,
+          "decodeMs": 9.742950000000292,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 335224,
+          "encodeMs": 918.538716,
+          "decodeMs": 17.07000199999993,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 372165,
+          "encodeMs": 1962.779438,
+          "decodeMs": 81.85804300000018,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.980303850412431,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 41193,
+            "encodeMs": 148.71302699999978,
+            "decodeMs": 135.9007499999998,
+            "quality": 80,
+            "psnr": 37.123470356284436,
+            "ssim": 0.980303850412431,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-W (wavelet lossy)"
+          },
+          "jpeg": {
+            "bytes": 62306,
+            "encodeMs": 45.471158999999716,
+            "decodeMs": 6.044626999999309,
+            "quality": 92,
+            "psnr": 36.80285095275955,
+            "ssim": 0.9811495576909787,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 46016,
+            "encodeMs": 93.43003600000065,
+            "decodeMs": 16.856777000000875,
+            "quality": 89,
+            "psnr": 37.317023250309184,
+            "ssim": 0.9810515912074314,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 36895,
+            "encodeMs": 1511.8145390000009,
+            "decodeMs": 27.43568199999936,
+            "quality": 75,
+            "psnr": 38.34218437733637,
+            "ssim": 0.9803487080515951,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "photo-coffee.png",
+      "category": "photo",
+      "width": 600,
+      "height": 400,
+      "hasAlpha": false,
+      "sourceBytes": 624658,
+      "lossless": {
+        "smg": {
+          "bytes": 333393,
+          "encodeMs": 1064.860321,
+          "decodeMs": 373.37947200000053,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 505800,
+          "encodeMs": 148.60963099999935,
+          "decodeMs": 7.305057999998098,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 336534,
+          "encodeMs": 805.9554769999995,
+          "decodeMs": 14.458254000001034,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 379625,
+          "encodeMs": 1968.8917110000002,
+          "decodeMs": 122.42127400000027,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.9778237236909527,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 47962,
+            "encodeMs": 125.84595500000069,
+            "decodeMs": 95.9668559999991,
+            "quality": 80,
+            "psnr": 36.18260139517409,
+            "ssim": 0.9778237236909527,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-W (wavelet lossy)"
+          },
+          "jpeg": {
+            "bytes": 85747,
+            "encodeMs": 66.71200699999827,
+            "decodeMs": 8.39918299999772,
+            "quality": 95,
+            "psnr": 36.630732433527186,
+            "ssim": 0.98072871617529,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 54220,
+            "encodeMs": 98.64091499999995,
+            "decodeMs": 12.263204000002588,
+            "quality": 88,
+            "psnr": 36.299134073273045,
+            "ssim": 0.9785394548371334,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 46016,
+            "encodeMs": 1831.7753039999989,
+            "decodeMs": 25.524513000000297,
+            "quality": 75,
+            "psnr": 37.49619293157266,
+            "ssim": 0.9780448789125946,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "photo-cat.png",
+      "category": "photo",
+      "width": 451,
+      "height": 300,
+      "hasAlpha": false,
+      "sourceBytes": 332566,
+      "lossless": {
+        "smg": {
+          "bytes": 151614,
+          "encodeMs": 774.154892999999,
+          "decodeMs": 183.72189599999547,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 247452,
+          "encodeMs": 83.71733600000152,
+          "decodeMs": 7.3370579999973415,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 153732,
+          "encodeMs": 381.67694000000483,
+          "decodeMs": 10.08261499999935,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 178184,
+          "encodeMs": 994.2351839999974,
+          "decodeMs": 42.05683499999577,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.9822436032089967,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 20615,
+            "encodeMs": 88.36572499999602,
+            "decodeMs": 72.54995500000223,
+            "quality": 80,
+            "psnr": 39.22526203418448,
+            "ssim": 0.9822436032089967,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-W (wavelet lossy)"
+          },
+          "jpeg": {
+            "bytes": 34962,
+            "encodeMs": 38.45132100000046,
+            "decodeMs": 4.556392999998934,
+            "quality": 93,
+            "psnr": 39.75657423851692,
+            "ssim": 0.9824114047369382,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 28230,
+            "encodeMs": 73.56198800000129,
+            "decodeMs": 10.626764000000549,
+            "quality": 90,
+            "psnr": 39.86112187430891,
+            "ssim": 0.9841232681057652,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 21882,
+            "encodeMs": 917.9026490000033,
+            "decodeMs": 13.568832000004477,
+            "quality": 76,
+            "psnr": 39.9237836711102,
+            "ssim": 0.98315273399375,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "screenshot-code.png",
+      "category": "screenshot",
+      "width": 1280,
+      "height": 800,
+      "hasAlpha": false,
+      "sourceBytes": 84038,
+      "lossless": {
+        "smg": {
+          "bytes": 49442,
+          "encodeMs": 1780.0354389999993,
+          "decodeMs": 570.1027480000048,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 102463,
+          "encodeMs": 84.1942080000008,
+          "decodeMs": 13.901495999998588,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 39328,
+          "encodeMs": 70.61822400000528,
+          "decodeMs": 19.928304000000935,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 145453,
+          "encodeMs": 4919.742121000003,
+          "decodeMs": 87.50841900000523,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 22327,
+            "encodeMs": 1616.032468999998,
+            "decodeMs": 71.05260200000339,
+            "quality": null,
+            "psnr": 50.906963207846765,
+            "ssim": 0.9999345725853924,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 61884,
+            "encodeMs": 122.05316000000312,
+            "decodeMs": 8.794713000002957,
+            "quality": 90,
+            "psnr": 35.10925294683476,
+            "ssim": 0.995533262124492,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 23420,
+            "encodeMs": 124.35361599999305,
+            "decodeMs": 18.967929000005824,
+            "quality": 49,
+            "psnr": 34.276217616533394,
+            "ssim": 0.9951606194851246,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 17602,
+            "encodeMs": 1397.273601000008,
+            "decodeMs": 50.2889809999906,
+            "quality": 34,
+            "psnr": 34.83576429111399,
+            "ssim": 0.9950538571200312,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "screenshot-dashboard.png",
+      "category": "screenshot",
+      "width": 1280,
+      "height": 800,
+      "hasAlpha": false,
+      "sourceBytes": 68168,
+      "lossless": {
+        "smg": {
+          "bytes": 51799,
+          "encodeMs": 1762.5293180000008,
+          "decodeMs": 721.2959669999982,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 90411,
+          "encodeMs": 99.41848500000197,
+          "decodeMs": 9.298592999999528,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 39646,
+          "encodeMs": 78.15822599999956,
+          "decodeMs": 17.36841500000446,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 132778,
+          "encodeMs": 5440.5351609999925,
+          "decodeMs": 91.43023499999254,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 20674,
+            "encodeMs": 1716.758296999993,
+            "decodeMs": 60.991196000002674,
+            "quality": null,
+            "psnr": 51.29541732327794,
+            "ssim": 0.9998852410825521,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 58707,
+            "encodeMs": 81.14935199999309,
+            "decodeMs": 9.673202999998466,
+            "quality": 82,
+            "psnr": 34.9993609054892,
+            "ssim": 0.9951191648591982,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 27844,
+            "encodeMs": 139.42758600000525,
+            "decodeMs": 23.52308100000664,
+            "quality": 65,
+            "psnr": 35.41900818740123,
+            "ssim": 0.9951286818198634,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 16622,
+            "encodeMs": 2905.6867800000036,
+            "decodeMs": 53.62093199999072,
+            "quality": 34,
+            "psnr": 36.36611124778689,
+            "ssim": 0.9959811727677947,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "screenshot-article.png",
+      "category": "screenshot",
+      "width": 1280,
+      "height": 800,
+      "hasAlpha": false,
+      "sourceBytes": 115478,
+      "lossless": {
+        "smg": {
+          "bytes": 65878,
+          "encodeMs": 2072.802039999995,
+          "decodeMs": 492.5878340000054,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 153004,
+          "encodeMs": 120.2514680000022,
+          "decodeMs": 8.841700999997556,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 88148,
+          "encodeMs": 1338.8422369999898,
+          "decodeMs": 27.68341800000053,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 332285,
+          "encodeMs": 6393.149830999988,
+          "decodeMs": 147.31541100001778,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 39788,
+            "encodeMs": 1691.1125279999978,
+            "decodeMs": 71.93314999999711,
+            "quality": null,
+            "psnr": 48.59753019961726,
+            "ssim": 0.9988326564280487,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 101555,
+            "encodeMs": 116.64244999998482,
+            "decodeMs": 15.147189000010258,
+            "quality": 87,
+            "psnr": 31.250091923822552,
+            "ssim": 0.9951911817777573,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 40834,
+            "encodeMs": 146.1105899999966,
+            "decodeMs": 21.68164299998898,
+            "quality": 33,
+            "psnr": 30.288155499434293,
+            "ssim": 0.9951048879020599,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 33172,
+            "encodeMs": 2050.7629489999963,
+            "decodeMs": 55.36219699998037,
+            "quality": 37,
+            "psnr": 30.47324954733526,
+            "ssim": 0.9955402169047992,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "logo-smg.png",
+      "category": "logo",
+      "width": 768,
+      "height": 256,
+      "hasAlpha": true,
+      "sourceBytes": 28528,
+      "lossless": {
+        "smg": {
+          "bytes": 15186,
+          "encodeMs": 568.1697489999933,
+          "decodeMs": 93.0904889999947,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 24856,
+          "encodeMs": 59.38220999998157,
+          "decodeMs": 3.0245040000008885,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 15010,
+          "encodeMs": 560.4553310000047,
+          "decodeMs": 7.01856399999815,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 25539,
+          "encodeMs": 1163.946192000003,
+          "decodeMs": 20.687283000006573,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 4967,
+            "encodeMs": 743.2540409999783,
+            "decodeMs": 12.664924999990035,
+            "quality": null,
+            "psnr": 53.074806265250025,
+            "ssim": 0.9987971581647481,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 0,
+            "encodeMs": 0,
+            "decodeMs": 0,
+            "note": "no alpha support — skipped"
+          },
+          "webp": {
+            "bytes": 5174,
+            "encodeMs": 3660.276186000003,
+            "decodeMs": 7.734269999986282,
+            "quality": 8,
+            "psnr": 39.27561188230889,
+            "ssim": 0.9950546322444999,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 2444,
+            "encodeMs": 436.669481000019,
+            "decodeMs": 13.612406000000192,
+            "quality": 10,
+            "psnr": 39.71953715309646,
+            "ssim": 0.9950179969641223,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "logo-badge.png",
+      "category": "logo",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "sourceBytes": 27882,
+      "lossless": {
+        "smg": {
+          "bytes": 17269,
+          "encodeMs": 642.8255070000014,
+          "decodeMs": 115.56929299997864,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 33038,
+          "encodeMs": 69.42294100002619,
+          "decodeMs": 3.6077109999896493,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 14202,
+          "encodeMs": 34.9003500000108,
+          "decodeMs": 7.451069999980973,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 37019,
+          "encodeMs": 1464.7752179999952,
+          "decodeMs": 27.66725800000131,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 7131,
+            "encodeMs": 785.2313189999841,
+            "decodeMs": 18.300676000013482,
+            "quality": null,
+            "psnr": 63.67903248483483,
+            "ssim": 0.9999884260724874,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 0,
+            "encodeMs": 0,
+            "decodeMs": 0,
+            "note": "no alpha support — skipped"
+          },
+          "webp": {
+            "bytes": 9590,
+            "encodeMs": 4887.664141999994,
+            "decodeMs": 12.839932999981102,
+            "quality": 47,
+            "psnr": 38.2393252742261,
+            "ssim": 0.9951712419761494,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 4087,
+            "encodeMs": 694.8253409999888,
+            "decodeMs": 18.03099599998677,
+            "quality": 12,
+            "psnr": 38.174408678403005,
+            "ssim": 0.9951809534056213,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "icon-camera-128.png",
+      "category": "icon",
+      "width": 128,
+      "height": 128,
+      "hasAlpha": true,
+      "sourceBytes": 2482,
+      "lossless": {
+        "smg": {
+          "bytes": 1265,
+          "encodeMs": 123.70449499998358,
+          "decodeMs": 1.196181000006618,
+          "exact": true,
+          "note": "SMG-P (palette)"
+        },
+        "png": {
+          "bytes": 3145,
+          "encodeMs": 6.471607999992557,
+          "decodeMs": 1.6144259999855421,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 1454,
+          "encodeMs": 6.228239999996731,
+          "decodeMs": 2.2550659999833442,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 4447,
+          "encodeMs": 112.26747900000191,
+          "decodeMs": 5.121108000021195,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 1265,
+            "encodeMs": 62.403968999977224,
+            "decodeMs": 1.113647000020137,
+            "quality": null,
+            "psnr": null,
+            "ssim": 1,
+            "exact": true,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 0,
+            "encodeMs": 0,
+            "decodeMs": 0,
+            "note": "no alpha support — skipped"
+          },
+          "webp": {
+            "bytes": 1348,
+            "encodeMs": 262.9296190000023,
+            "decodeMs": 2.6795900000142865,
+            "quality": 54,
+            "psnr": 35.06944829804476,
+            "ssim": 0.9954013373802165,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 1128,
+            "encodeMs": 64.08174399999552,
+            "decodeMs": 4.022125999996206,
+            "quality": 34,
+            "psnr": 38.30874500777079,
+            "ssim": 0.9951196001487806,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "icon-cloud-64.png",
+      "category": "icon",
+      "width": 64,
+      "height": 64,
+      "hasAlpha": true,
+      "sourceBytes": 916,
+      "lossless": {
+        "smg": {
+          "bytes": 532,
+          "encodeMs": 60.98783299999195,
+          "decodeMs": 0.5585579999897163,
+          "exact": true,
+          "note": "SMG-P (palette)"
+        },
+        "png": {
+          "bytes": 1193,
+          "encodeMs": 2.8014120000007097,
+          "decodeMs": 1.2878249999776017,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 620,
+          "encodeMs": 2.6585719999857247,
+          "decodeMs": 1.7970619999978226,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 1899,
+          "encodeMs": 37.82948000001488,
+          "decodeMs": 2.8188439999939874,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 532,
+            "encodeMs": 18.293780999985756,
+            "decodeMs": 0.39208200000575744,
+            "quality": null,
+            "psnr": null,
+            "ssim": 1,
+            "exact": true,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 0,
+            "encodeMs": 0,
+            "decodeMs": 0,
+            "note": "no alpha support — skipped"
+          },
+          "webp": {
+            "bytes": 612,
+            "encodeMs": 68.21104300001753,
+            "decodeMs": 2.1698599999945145,
+            "quality": 39,
+            "psnr": 35.38170165910706,
+            "ssim": 0.9954654836155262,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 773,
+            "encodeMs": 26.45541699999012,
+            "decodeMs": 2.717655000014929,
+            "quality": 26,
+            "psnr": 37.750800833117694,
+            "ssim": 0.9959370831128251,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "icon-favicon-32.png",
+      "category": "icon",
+      "width": 32,
+      "height": 32,
+      "hasAlpha": true,
+      "sourceBytes": 1604,
+      "lossless": {
+        "smg": {
+          "bytes": 1049,
+          "encodeMs": 4.081061000004411,
+          "decodeMs": 1.3963610000209883,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 1314,
+          "encodeMs": 1.7756389999995008,
+          "decodeMs": 1.1105630000238307,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 1128,
+          "encodeMs": 7.030666000006022,
+          "decodeMs": 1.488725000002887,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 1942,
+          "encodeMs": 14.491386000008788,
+          "decodeMs": 3.6064900000055786,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.9933868729804168,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 559,
+            "encodeMs": 1.0984849999949802,
+            "decodeMs": 0.790515000000596,
+            "quality": 80,
+            "psnr": 35.20978943706038,
+            "ssim": 0.9933868729804168,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-W (wavelet lossy)"
+          },
+          "jpeg": {
+            "bytes": 0,
+            "encodeMs": 0,
+            "decodeMs": 0,
+            "note": "no alpha support — skipped"
+          },
+          "webp": {
+            "bytes": 614,
+            "encodeMs": 16.841397000011057,
+            "decodeMs": 2.0145959999936167,
+            "quality": 87,
+            "psnr": 34.87515463731677,
+            "ssim": 0.9937290531780378,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 783,
+            "encodeMs": 13.677242000005208,
+            "decodeMs": 2.5007670000195503,
+            "quality": 66,
+            "psnr": 39.432977640823054,
+            "ssim": 0.99358656419484,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "illustration-landscape.png",
+      "category": "illustration",
+      "width": 1024,
+      "height": 640,
+      "hasAlpha": false,
+      "sourceBytes": 44436,
+      "lossless": {
+        "smg": {
+          "bytes": 18001,
+          "encodeMs": 1028.5991410000133,
+          "decodeMs": 222.8419700000086,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 38885,
+          "encodeMs": 94.2250210000202,
+          "decodeMs": 7.710488999990048,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 17174,
+          "encodeMs": 92.23535999999149,
+          "decodeMs": 14.310224999993807,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 42659,
+          "encodeMs": 3124.386846999987,
+          "decodeMs": 56.76020799999242,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 7785,
+            "encodeMs": 763.2852039999852,
+            "decodeMs": 29.89821800001664,
+            "quality": null,
+            "psnr": 61.422946170724074,
+            "ssim": 0.9999659857635181,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-P (palette)"
+          },
+          "jpeg": {
+            "bytes": 19298,
+            "encodeMs": 38.0538649999944,
+            "decodeMs": 5.41088799998397,
+            "quality": 81,
+            "psnr": 40.70850401281084,
+            "ssim": 0.9951912290023627,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 7692,
+            "encodeMs": 64.92401099999552,
+            "decodeMs": 16.779768999986118,
+            "quality": 52,
+            "psnr": 39.68012458097082,
+            "ssim": 0.9953966943981346,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 3589,
+            "encodeMs": 1067.6704849999805,
+            "decodeMs": 31.593601999979,
+            "quality": 18,
+            "psnr": 41.64144076006722,
+            "ssim": 0.9953690828380786,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "gradient-aurora.png",
+      "category": "gradient",
+      "width": 1024,
+      "height": 512,
+      "hasAlpha": false,
+      "sourceBytes": 402957,
+      "lossless": {
+        "smg": {
+          "bytes": 146499,
+          "encodeMs": 1224.2405290000024,
+          "decodeMs": 306.0610469999956,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 231789,
+          "encodeMs": 843.930766000005,
+          "decodeMs": 9.103041999973357,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 171602,
+          "encodeMs": 458.92004100000486,
+          "decodeMs": 23.789079000009224,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 230488,
+          "encodeMs": 8662.017501000024,
+          "decodeMs": 98.76888200000394,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 1084,
+            "encodeMs": 1166.24246400001,
+            "decodeMs": 48.9685940000345,
+            "quality": 80,
+            "psnr": 52.17292293158973,
+            "ssim": 0.9980358438857455,
+            "exact": false,
+            "reachedTarget": true,
+            "note": "SMG-W (wavelet lossy)"
+          },
+          "jpeg": {
+            "bytes": 4871,
+            "encodeMs": 27.242856000026222,
+            "decodeMs": 4.530976000009105,
+            "quality": 68,
+            "psnr": 46.379075169644715,
+            "ssim": 0.9952439720507223,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 2084,
+            "encodeMs": 62.02931800001534,
+            "decodeMs": 13.564696000015829,
+            "quality": 1,
+            "psnr": 39.155585772883015,
+            "ssim": 0.9952159983266148,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 1024,
+            "encodeMs": 266.4923139999737,
+            "decodeMs": 23.781031999969855,
+            "quality": 1,
+            "psnr": 44.38618790477706,
+            "ssim": 0.9965915976513626,
+            "reachedTarget": true
+          }
+        }
+      }
+    },
+    {
+      "file": "gradient-sunset.png",
+      "category": "gradient",
+      "width": 800,
+      "height": 400,
+      "hasAlpha": false,
+      "sourceBytes": 8767,
+      "lossless": {
+        "smg": {
+          "bytes": 331,
+          "encodeMs": 420.82907899998827,
+          "decodeMs": 120.51662400003988,
+          "exact": true,
+          "note": "SMG-L (lossless predictive)"
+        },
+        "png": {
+          "bytes": 2177,
+          "encodeMs": 21.32665200001793,
+          "decodeMs": 6.545117000001483,
+          "exact": true
+        },
+        "webp": {
+          "bytes": 448,
+          "encodeMs": 187.39075999998022,
+          "decodeMs": 7.738570999994408,
+          "exact": true
+        },
+        "avif": {
+          "bytes": 1043,
+          "encodeMs": 558.7603370000143,
+          "decodeMs": 19.540072999952827,
+          "exact": true
+        }
+      },
+      "lossy": {
+        "targetSsim": 0.995,
+        "smgQuality": 80,
+        "results": {
+          "smg": {
+            "bytes": 331,
+            "encodeMs": 325.6588439999614,
+            "decodeMs": 91.4818320000195,
+            "quality": null,
+            "psnr": null,
+            "ssim": 1,
+            "exact": true,
+            "reachedTarget": true,
+            "note": "SMG-L (lossless predictive)"
+          },
+          "jpeg": {
+            "bytes": 4387,
+            "encodeMs": 18.150128999957815,
+            "decodeMs": 4.135245000012219,
+            "quality": 68,
+            "psnr": 47.874332032618796,
+            "ssim": 0.995877145892364,
+            "reachedTarget": true
+          },
+          "webp": {
+            "bytes": 2118,
+            "encodeMs": 28.33245300000999,
+            "decodeMs": 10.964036000019405,
+            "quality": 61,
+            "psnr": 45.61208025136239,
+            "ssim": 0.9952033909817752,
+            "reachedTarget": true
+          },
+          "avif": {
+            "bytes": 569,
+            "encodeMs": 150.0805629999959,
+            "decodeMs": 13.90450200001942,
+            "quality": 1,
+            "psnr": 43.85652345474672,
+            "ssim": 0.9972486745296657,
+            "reachedTarget": true
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "lossless": {
+      "smg": {
+        "bytes": 1181488,
+        "images": 14,
+        "exactAll": true
+      },
+      "png": {
+        "bytes": 1922832,
+        "images": 14,
+        "exactAll": true
+      },
+      "webp": {
+        "bytes": 1214250,
+        "images": 14,
+        "exactAll": true
+      },
+      "avif": {
+        "bytes": 1885526,
+        "images": 14,
+        "exactAll": true
+      }
+    },
+    "lossy": {
+      "jpeg": {
+        "bytes": 433717,
+        "images": 9,
+        "smgBytesSameSet": 201759,
+        "deltaPercent": -53.481417606411554
+      },
+      "webp": {
+        "bytes": 249796,
+        "images": 14,
+        "smgBytesSameSet": 216213,
+        "deltaPercent": -13.444170443081555
+      },
+      "avif": {
+        "bytes": 186586,
+        "images": 14,
+        "smgBytesSameSet": 216213,
+        "deltaPercent": 15.87846890977887
+      }
+    }
+  }
+}

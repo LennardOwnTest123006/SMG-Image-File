@@ -160,7 +160,7 @@ export function readContainer(bytes: Uint8Array, limits: DecodeLimits = {}): Par
     const tag = String.fromCharCode(...tagBytes);
     if (!/^[A-Za-z][A-Za-z0-9_ ]{3}$/.test(tag)) fail(SmgErrorCode.CORRUPT_PAYLOAD, `invalid chunk tag at offset ${start}`);
     const len = r.varint();
-    if (len > r.remaining) fail(SmgErrorCode.TRUNCATED, `chunk ${tag} declares ${len} bytes but only ${r.remaining} remain`);
+    if (len > r.remaining) fail(SmgErrorCode.TRUNCATED, `file truncated: chunk ${tag} declares ${len} bytes but only ${r.remaining} remain`);
     const payloadStart = r.pos;
     const payload = r.bytes(len);
     const stored = r.u32();
