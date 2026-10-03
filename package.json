@@ -1,0 +1,35 @@
+{
+  "name": "smg-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SMG — an original compact image format, codec library, CLI, and browser-based image studio.",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/codec",
+    "packages/cli",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build -w @smg/codec && npm run build -w @smg/cli && npm run build -w @smg/web",
+    "build:web": "npm run build -w @smg/codec && npm run build -w @smg/cli && npm run build -w @smg/web",
+    "dev": "npm run dev -w @smg/web",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc -p packages/codec --noEmit && tsc -p packages/cli --noEmit && tsc -p apps/web --noEmit",
+    "bench": "node packages/cli/dist/smg.mjs benchmark --corpus bench/corpus --out bench/results/latest.json",
+    "bench:corpus": "node bench/make-corpus.mjs",
+    "smg": "node packages/cli/dist/smg.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}

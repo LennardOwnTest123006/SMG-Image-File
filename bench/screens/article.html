@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#fffdf8;font:17px/1.7 "DejaVu Serif",serif;color:#292524}
+nav{border-bottom:1px solid #e7e5e4;padding:14px 60px;font:14px "DejaVu Sans",sans-serif;display:flex;gap:26px;color:#57534e}nav b{color:#b45309}
+main{max-width:720px;margin:36px auto}h1{font-size:38px;line-height:1.2;margin:0 0 10px}.meta{font:13px "DejaVu Sans",sans-serif;color:#78716c;margin-bottom:24px}
+blockquote{border-left:4px solid #f59e0b;margin:22px 0;padding:4px 20px;color:#57534e;font-style:italic}
+.fig{display:flex;gap:10px;margin:20px 0}.fig div{flex:1;height:90px;border-radius:8px}
+</style></head><body><nav><b>The Pixel Review</b><span>Science</span><span>Design</span><span>Engineering</span><span>Archive</span></nav><main>
+<h1>Why every byte of an image still matters</h1><div class="meta">By the editorial team · 9 min read · October 2026</div>
+<p>Images account for the majority of the bytes transferred by a typical web page. Even on fast connections, a heavy hero image delays the moment a page feels usable, and on metered mobile plans it costs real money. Compression is therefore not an academic exercise: it is one of the most effective performance optimisations available.</p>
+<p>Modern codecs combine three ideas. First, a <em>transform</em> concentrates the signal into few significant values. Second, <em>quantisation</em> discards precision the eye will not miss. Third, <em>entropy coding</em> packs the remaining symbols as tightly as their statistics allow.</p>
+<blockquote>“The best compression is the one your users never notice — except in how fast everything loads.”</blockquote>
+<div class="fig"><div style="background:linear-gradient(135deg,#fde68a,#f59e0b)"></div><div style="background:linear-gradient(135deg,#bfdbfe,#3b82f6)"></div><div style="background:linear-gradient(135deg,#ddd6fe,#7c3aed)"></div></div>
+<p>Lossless formats must reproduce every pixel exactly, so their gains come from better prediction and smarter context modelling. Lossy formats have more freedom, but must spend their bits where perception is most sensitive: edges, faces and smooth gradients.</p>
+</main></body></html>
