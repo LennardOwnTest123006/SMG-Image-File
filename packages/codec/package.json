@@ -1,0 +1,24 @@
+{
+  "name": "@smg/codec",
+  "version": "1.0.0",
+  "description": "Reference encoder/decoder for the SMG image format (.smg).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./io": "./src/io/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "../codec/tsconfig.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "paths": {
+      "@smg/codec": ["../codec/src/index.ts"],
+      "@smg/codec/io": ["../codec/src/io/index.ts"]
+    }
+  },
+  "include": ["src", "test"]
+}

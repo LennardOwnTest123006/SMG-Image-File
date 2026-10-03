@@ -1,0 +1,128 @@
+[
+  {
+    "file": "photo-astronaut.png",
+    "category": "photo",
+    "source": "NASA portrait of Eileen Collins via scikit-image",
+    "license": "Public domain",
+    "width": 512,
+    "height": 512,
+    "hasAlpha": false
+  },
+  {
+    "file": "photo-coffee.png",
+    "category": "photo",
+    "source": "Coffee cup by Rachel Michetti via scikit-image",
+    "license": "CC0",
+    "width": 600,
+    "height": 400,
+    "hasAlpha": false
+  },
+  {
+    "file": "photo-cat.png",
+    "category": "photo",
+    "source": "Chelsea the cat by Stefan van der Walt via scikit-image",
+    "license": "CC0",
+    "width": 451,
+    "height": 300,
+    "hasAlpha": false
+  },
+  {
+    "file": "screenshot-code.png",
+    "category": "screenshot",
+    "source": "Chromium rendering of bench/screens/code.html",
+    "license": "MIT (part of SMG)",
+    "width": 1280,
+    "height": 800,
+    "hasAlpha": false
+  },
+  {
+    "file": "screenshot-dashboard.png",
+    "category": "screenshot",
+    "source": "Chromium rendering of bench/screens/dashboard.html",
+    "license": "MIT (part of SMG)",
+    "width": 1280,
+    "height": 800,
+    "hasAlpha": false
+  },
+  {
+    "file": "screenshot-article.png",
+    "category": "screenshot",
+    "source": "Chromium rendering of bench/screens/article.html",
+    "license": "MIT (part of SMG)",
+    "width": 1280,
+    "height": 800,
+    "hasAlpha": false
+  },
+  {
+    "file": "logo-smg.png",
+    "category": "logo",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 768,
+    "height": 256,
+    "hasAlpha": true
+  },
+  {
+    "file": "logo-badge.png",
+    "category": "logo",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 512,
+    "height": 512,
+    "hasAlpha": true
+  },
+  {
+    "file": "icon-camera-128.png",
+    "category": "icon",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 128,
+    "height": 128,
+    "hasAlpha": true
+  },
+  {
+    "file": "icon-cloud-64.png",
+    "category": "icon",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 64,
+    "height": 64,
+    "hasAlpha": true
+  },
+  {
+    "file": "icon-favicon-32.png",
+    "category": "icon",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 32,
+    "height": 32,
+    "hasAlpha": true
+  },
+  {
+    "file": "illustration-landscape.png",
+    "category": "illustration",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 1024,
+    "height": 640,
+    "hasAlpha": true
+  },
+  {
+    "file": "gradient-aurora.png",
+    "category": "gradient",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 1024,
+    "height": 512,
+    "hasAlpha": true
+  },
+  {
+    "file": "gradient-sunset.png",
+    "category": "gradient",
+    "source": "Generated vector artwork (bench/make-corpus.mjs)",
+    "license": "MIT (part of SMG)",
+    "width": 800,
+    "height": 400,
+    "hasAlpha": true
+  }
+]

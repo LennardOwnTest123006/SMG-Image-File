@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#1e1f26;font:14px/1.55 "DejaVu Sans Mono",monospace;color:#d4d4d8;display:flex;height:100vh}
+.side{width:230px;background:#16171d;padding:12px 0;border-right:1px solid #2a2b33;font-family:"DejaVu Sans",sans-serif;font-size:13px}
+.side div{padding:4px 18px;color:#a1a1aa}.side .on{background:#2a2d3a;color:#fff}.side .d{color:#7c7f8f;font-weight:bold;padding-top:10px}
+.main{flex:1;display:flex;flex-direction:column}.tabs{display:flex;background:#16171d;font-family:"DejaVu Sans",sans-serif;font-size:12.5px}
+.tabs span{padding:9px 16px;color:#8b8d98;border-right:1px solid #2a2b33}.tabs .on{background:#1e1f26;color:#fff;border-top:2px solid #7c5cff}
+pre{margin:0;padding:12px 0;counter-reset:l}code{display:block;padding-left:62px;position:relative}
+code:before{counter-increment:l;content:counter(l);position:absolute;left:0;width:44px;text-align:right;color:#55576a}
+.k{color:#c792ea}.s{color:#c3e88d}.f{color:#82aaff}.c{color:#676e95;font-style:italic}.n{color:#f78c6c}.t{color:#ffcb6b}
+.status{margin-top:auto;background:#7c5cff;color:#fff;font:12px "DejaVu Sans",sans-serif;padding:4px 14px;display:flex;gap:22px}
+</style></head><body><div class="side"><div class="d">EXPLORER</div><div>▾ smg</div><div>&nbsp;&nbsp;▸ apps</div><div>&nbsp;&nbsp;▾ packages</div><div>&nbsp;&nbsp;&nbsp;&nbsp;▾ codec</div><div class="on">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rangecoder.ts</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intcoder.ts</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;planes.ts</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wavelet.ts</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container.ts</div><div>&nbsp;&nbsp;▸ cli</div><div>&nbsp;&nbsp;README.md</div><div>&nbsp;&nbsp;package.json</div><div class="d">OUTLINE</div><div>ƒ prob</div><div>ƒ update</div><div>ƒ splitRange</div><div>◇ RangeEncoder</div><div>◇ RangeDecoder</div></div>
+<div class="main"><div class="tabs"><span class="on">rangecoder.ts</span><span>planes.ts</span><span>wavelet.ts</span><span>README.md</span></div><pre>
+<code><span class="c">// Adaptive binary range coder with 16-bit probabilities.</span></code>
+<code><span class="k">import</span> { fail, SmgErrorCode } <span class="k">from</span> <span class="s">'../errors.ts'</span>;</code>
+<code></code>
+<code><span class="k">const</span> TOP = <span class="n">1</span> &lt;&lt; <span class="n">24</span>;</code>
+<code><span class="k">const</span> PROB_INIT = <span class="n">32768</span>;</code>
+<code><span class="k">const</span> PROB_MIN = <span class="n">24</span>;</code>
+<code></code>
+<code><span class="k">export class</span> <span class="t">Models</span> {</code>
+<code>  <span class="k">readonly</span> fast: <span class="t">Uint16Array</span>;</code>
+<code>  <span class="k">readonly</span> slow: <span class="t">Uint16Array</span>;</code>
+<code>  <span class="f">constructor</span>(<span class="k">readonly</span> size: <span class="t">number</span>) {</code>
+<code>    <span class="k">this</span>.fast = <span class="k">new</span> <span class="t">Uint16Array</span>(size).<span class="f">fill</span>(PROB_INIT);</code>
+<code>    <span class="k">this</span>.slow = <span class="k">new</span> <span class="t">Uint16Array</span>(size).<span class="f">fill</span>(PROB_INIT);</code>
+<code>  }</code>
+<code>}</code>
+<code></code>
+<code><span class="k">function</span> <span class="f">splitRange</span>(range: <span class="t">number</span>, p: <span class="t">number</span>): <span class="t">number</span> {</code>
+<code>  <span class="k">return</span> (range &gt;&gt;&gt; <span class="n">16</span>) * p + (((range &amp; <span class="n">0xffff</span>) * p) &gt;&gt;&gt; <span class="n">16</span>);</code>
+<code>}</code>
+<code></code>
+<code><span class="k">export class</span> <span class="t">RangeEncoder</span> {</code>
+<code>  <span class="k">private</span> low = <span class="n">0</span>;</code>
+<code>  <span class="k">private</span> range = <span class="n">0xffffffff</span>;</code>
+<code>  <span class="f">encode</span>(m: <span class="t">Models</span>, i: <span class="t">number</span>, bit: <span class="t">number</span>): <span class="t">void</span> {</code>
+<code>    <span class="k">const</span> bound = <span class="f">splitRange</span>(<span class="k">this</span>.range, <span class="f">prob</span>(m, i));</code>
+<code>    <span class="k">if</span> (bit) <span class="k">this</span>.range = bound;</code>
+<code>    <span class="k">else</span> { <span class="k">this</span>.low += bound; <span class="k">this</span>.range -= bound; }</code>
+<code>    <span class="f">update</span>(m, i, bit);</code>
+<code>    <span class="k">while</span> (<span class="k">this</span>.range &lt; TOP) { <span class="k">this</span>.range = (<span class="k">this</span>.range &lt;&lt; <span class="n">8</span>) &gt;&gt;&gt; <span class="n">0</span>; <span class="k">this</span>.<span class="f">shiftLow</span>(); }</code>
+<code>  }</code>
+<code>}</code>
+<code><span class="c">// Encoder and decoder must apply identical probability updates.</span></code>
+</pre><div class="status"><span>⎇ main</span><span>TypeScript</span><span>UTF-8</span><span>Ln 18, Col 42</span><span>Spaces: 2</span></div></div></body></html>

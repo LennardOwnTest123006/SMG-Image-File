@@ -1,0 +1,21 @@
+{
+  "name": "@smg/cli",
+  "version": "1.0.0",
+  "description": "Command-line tool for the SMG image format: encode, decode, info, benchmark.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "smg": "./dist/smg.mjs"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@smg/codec": "1.0.0",
+    "jpeg-js": "^0.4.4"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.35.5"
+  }
+}
